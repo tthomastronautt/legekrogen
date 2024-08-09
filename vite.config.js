@@ -10,6 +10,7 @@ export default defineConfig({
             "@components": "/src/components",
             "@pages": "/src/pages",
             "@routes": "/src/routes",
+            "@utils": "/src/utils",
         },
     },
     plugins: [react()],
