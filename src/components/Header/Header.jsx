@@ -4,19 +4,32 @@ import Logo from "@components/Logo/Logo";
 import Delivery from "@components/Delivery/Delivery";
 import Button from "@components/Button/Button";
 import NavBar from "@components/NavBar/NavBar";
+import ShoppingCartList from "@components/ShoppingCartList/ShoppingCartList";
 
 import { Link } from "react-router-dom";
 import { useState, useMemo } from "react";
 
+import { products } from "@variables/products";
+
+import { MdShoppingCart } from "react-icons/md";
+
 import styles from "./Header.module.css";
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
+    const [isActiveShoppingList, setIsActiveShoppingList] = useState(false);
 
     const openNavBar = () => setIsActive((prev) => !prev);
 
     const mergedStylesNavBarBtn = useMemo(
         () => `${styles.burgerMenuBtn} ${isActive ? styles.active : ""}`,
         [isActive]
+    );
+    const mergedStylesShoppingCartBtn = useMemo(
+        () =>
+            `${styles.shoppingCartBtn} ${
+                products.length > 0 ? styles.notTomShoppingCart : ""
+            }`,
+        []
     );
 
     return (
@@ -33,10 +46,17 @@ const Header = () => {
                 >
                     <Logo width={115} />
                 </Link>
+                <Button
+                    onClick={() => setIsActiveShoppingList((prev) => !prev)}
+                    className={mergedStylesShoppingCartBtn}
+                >
+                    <MdShoppingCart />
+                </Button>
                 <Button onClick={openNavBar} className={mergedStylesNavBarBtn}>
                     <span></span>
                 </Button>
                 <NavBar isActive={isActive} setIsActive={setIsActive} />
+                <ShoppingCartList isActiveShoppingList={isActiveShoppingList} />
             </SectionLayout>
         </header>
     );

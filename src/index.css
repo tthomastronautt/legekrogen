@@ -2,13 +2,14 @@
 @import url(https://fonts.googleapis.com/css?family=Square+Peg:regular);
 :root {
     --violtet: #9478a7e5;
-    --darkvioltet: #9478a7;
-    --lightvioltet: #c1adce;
+    --darkviolet: #9478a7;
+    --lightviolet: #c1adce;
     --darkblue: #355674;
     --ligthblue: #d7e6ec;
     --white: #fff;
     --grey: #bcbcbc;
     --red: #e74c3c;
+    --blackOpacity:#00000080;
 }
 
 *,

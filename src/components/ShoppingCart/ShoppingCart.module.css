@@ -1,0 +1,24 @@
+.cart {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--darkblue);
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid var(--lightviolet);
+}
+
+.img {
+    width: 95px;
+    aspect-ratio: 1/1;
+    border: 0.5px solid var(--grey);
+    border-radius: 16px;
+}
+
+.textOne {
+    font-size: 0.75rem;
+}
+
+.price {
+    font-size: 1.375rem;
+    min-width: max-content;
+}
