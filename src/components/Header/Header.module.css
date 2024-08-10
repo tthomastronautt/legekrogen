@@ -3,6 +3,11 @@
     background: var(--darkblue);
 }
 
+.linkLogo {
+    position: relative;
+    z-index: 20;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -25,8 +30,6 @@
         bottom: 50% !important;
     }
 }
-
-
 
 .burgerMenuBtn {
     position: relative;

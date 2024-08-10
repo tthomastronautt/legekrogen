@@ -26,7 +26,11 @@ const Header = () => {
                 classNameSection={styles.section}
                 classNameContainer={styles.container}
             >
-                <Link to="/">
+                <Link
+                    onClick={() => setIsActive(false)}
+                    className={styles.linkLogo}
+                    to="/"
+                >
                     <Logo width={115} />
                 </Link>
                 <Button onClick={openNavBar} className={mergedStylesNavBarBtn}>
