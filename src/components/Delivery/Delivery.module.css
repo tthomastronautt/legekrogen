@@ -1,0 +1,10 @@
+.delivery {
+    background: var(--ligthblue);
+    text-align: center;
+    padding: 0.46rem 0;
+    font-size: 0.625rem;
+}
+
+.text {
+    padding-left: 0.2rem;
+}

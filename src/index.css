@@ -8,6 +8,7 @@
     --ligthblue: #d7e6ec;
     --white: #fff;
     --grey: #bcbcbc;
+    --red: #e74c3c;
 }
 
 *,
@@ -87,25 +88,4 @@ textarea {
 
 body.lock {
     overflow: hidden;
-}
-
-.container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    @media (min-width: 640px) {
-        max-width: 640px;
-    }
-    @media (min-width: 768px) {
-        max-width: 768px;
-    }
-    @media (min-width: 1024px) {
-        max-width: 1024px;
-    }
-    @media (min-width: 1280px) {
-        max-width: 1280px;
-    }
-    @media (min-width: 1536px) {
-        max-width: 1536px;
-    }
 }
