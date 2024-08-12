@@ -1,19 +1,9 @@
-import Footer from "@components/Footer/Footer";
-import Header from "@components/Header/Header";
-import { PropTypes } from "prop-types";
+import Footer from "@components/Footer/Footer"
 
 const IndexLayout = ({ children }) => {
-    return (
-        <>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-        </>
-    );
-};
+    return(
+        <main>{children}</main>
+    )
+}
 
-export default IndexLayout;
-
-IndexLayout.propTypes = {
-    children: PropTypes.node.isRequired,
-};
+export default IndexLayout
