@@ -1,0 +1,35 @@
+.section {
+    background: var(--ligthblue);
+    text-align: center;
+    padding-top: 4.125rem;
+    padding-bottom: 6.25rem;
+}
+
+.title {
+    padding-bottom: 1.875rem;
+}
+
+.info {
+    padding-bottom: 0.6rem;
+}
+
+.link {
+    display: block;
+    margin: 0 auto;
+    padding: 0.75rem 0;
+    width: clamp(300px, 55vw, 500px);
+    background: var(--darkblue);
+    font-size: 0.8rem;
+    border-radius: 1.3rem;
+    color: var(--white);
+    text-transform: uppercase;
+    transition: all 1s ease 0s;
+
+    @media (min-width: 1281px) {
+        &:hover {
+            background: var(--white);
+            color: var(--darkblue);
+            outline: 1px solid var(--darkblue);
+        }
+    }
+}
