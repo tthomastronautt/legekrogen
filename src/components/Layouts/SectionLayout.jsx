@@ -1,5 +1,6 @@
+import { PropTypes } from "prop-types";
 const SectionLayout = ({ children }) => {
-    return(
+    return (
         <section>
             <div className="container">{children}</div>
         </section>
@@ -7,3 +8,7 @@ const SectionLayout = ({ children }) => {
 };
 
 export default SectionLayout;
+
+SectionLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
