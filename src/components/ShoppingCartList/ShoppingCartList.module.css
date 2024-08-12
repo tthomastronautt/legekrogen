@@ -1,5 +1,6 @@
 .container {
     position: fixed;
+    z-index: 20;
     inset: 0;
     background: var(--blackOpacity);
     top: calc(28px + 56px);
