@@ -4,13 +4,29 @@ import styles from "./Welcome.module.css";
 import SectionLayout from "@layouts/SectionLayout/SectionLayout";
 import { PropTypes } from "prop-types";
 
-const Welcome = ({ img, title, subtitle }) => {
+const Welcome = ({
+    img,
+    title,
+    subtitle,
+    titleType,
+    subtitleStyles,
+    text,
+    sectionStyles,
+    containerStyles
+}) => {
+
+    const mergedStyles = `${styles.welcome} ${sectionStyles ?? ""}`
+
     return (
-        <SectionLayout classNameSection={styles.welcome}>
-            <Title type="h1" className={styles.title}>
+        <SectionLayout
+            classNameSection={mergedStyles}
+            classNameContainer={containerStyles}
+        >
+            <Title type={titleType} className={styles.title}>
                 {title}
             </Title>
-            <p>{subtitle}</p>
+            <p className={subtitleStyles}>{subtitle}</p>
+            {text && <p className={styles.text}>{text}</p>}
             <img className={styles.img} src={img} alt="forside" />
         </SectionLayout>
     );
@@ -22,4 +38,9 @@ Welcome.propTypes = {
     img: PropTypes.string,
     title: PropTypes.string,
     subtitle: PropTypes.string,
+    titleType: PropTypes.string,
+    subtitleStyles: PropTypes.string,
+    text: PropTypes.string,
+    sectionStyles: PropTypes.string,
+    containerStyles: PropTypes.string
 };
