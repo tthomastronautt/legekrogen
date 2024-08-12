@@ -1,5 +1,6 @@
 import Welcome from "@components/Welcome/Welcome";
 import { welcomeData } from "@variables/welcomeData.js";
+import PronouncesSection from '@components/PronouncesSection/PronouncesSection';
 
 const Forside = () => {
     return (
@@ -8,6 +9,7 @@ const Forside = () => {
                 {...welcomeData.forside}
                 titleType="h1"
             />
+            <PronouncesSection />
         </>
     );
 };
