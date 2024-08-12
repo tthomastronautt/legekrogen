@@ -1,0 +1,24 @@
+.container{
+    width: 325px;
+    background-color: var(--darkviolet);
+    border-radius: 16px;
+    color: var(--white);
+    margin: 20px;
+}
+.productImg{
+    border-radius: 16px 16px 0px 0px;
+}
+.brand, .title, .price{
+    width: 100%;
+    padding-inline: 22px;
+}
+.brand{
+    margin: 16px 0px 0px 0px;
+}
+.title, .price{
+    font-weight: bold;
+}
+.price{
+    font-size: 26px;
+    padding-block:16px;
+}

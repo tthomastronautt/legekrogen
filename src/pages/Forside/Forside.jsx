@@ -1,7 +1,6 @@
 import Welcome from "@components/Welcome/Welcome";
-import { welcomeData } from "@variables/welcomeData.js";
-import PronouncesSection from '@components/PronouncesSection/PronouncesSection';
-import BecomeCustomer from '@components/BecomeCustomer/BecomeCustomer';
+import forsidenImg from "@assets/heros/forsiden.jpg";
+import { welcomeTitle } from "@variables/welcome-title.js";
 
 const Forside = () => {
     return (
@@ -12,6 +11,7 @@ const Forside = () => {
             />
             <PronouncesSection />
             <BecomeCustomer/>
+            <ToyShowcase />
         </>
     );
 };

@@ -1,0 +1,16 @@
+.toyShowcase{
+    background: var(--lightviolet);
+    padding-block: 50px 100px;
+}
+.title, .subTitle{
+    color: var(--white);
+    text-align: center;
+}
+.subTitle{
+    font-family: "Quicksand";
+    margin-block: 10px 50px;
+}
+.cardContainer{
+    display: flex;
+    flex-flow: row wrap;
+}

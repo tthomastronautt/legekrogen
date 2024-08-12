@@ -7,13 +7,13 @@ const Footer = () => {
     return(
         <div className={styles.container}>
             <Title type="h2" className={styles.title}>Kundeservice</Title>
-            <p className={styles.info}><MdOutlineEmail />kontakt@legehjørnet.dk</p>
-            <p className={styles.info}><FaPhoneAlt /> +45 23 45 89</p>
+            <a href="mailto:kontakt@legehjørnet.dk" className={styles.info}><MdOutlineEmail /> kontakt@legehjørnet.dk</a>
+            <a href="+45 23 45 67 89" className={styles.info}><FaPhoneAlt /> +45 23 45 67 89</a>
             <Title type="h2" className={styles.title}>Følg os</Title>
-            <Title type="h1" className={styles.social}>
-                <FaFacebook />
-                <FaInstagram />
-            </Title>
+            <div className={styles.socialContainer}>
+                <a className={styles.social} href="https://www.facebook.com/" target="_blank"><p><FaFacebook /></p></a>
+                <a className={styles.social} href="https://www.instagram.com/" target="_blank"><p><FaInstagram /></p></a>
+            </div>
         </div>
     )
 }
