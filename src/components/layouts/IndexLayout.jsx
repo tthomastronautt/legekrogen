@@ -1,12 +1,9 @@
-import Header from "@components/Header/Header";
+import Footer from "@components/Footer/Footer"
 
 const IndexLayout = ({ children }) => {
-    return (
-        <>
-            <Header />
-            <main>{children}</main>
-        </>
-    );
-};
+    return(
+        <main>{children}</main>
+    )
+}
 
-export default IndexLayout;
+export default IndexLayout
