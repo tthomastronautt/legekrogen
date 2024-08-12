@@ -25,7 +25,7 @@ const PronouncesSection = () => {
             <div className={styles.ronouncesConteiner}>
                 {reviews.map((review) => (
                     <Pronounces
-                        key={review.id}
+                        key={review._id}
                         text={review.description}
                         userData={review.name}
                     />
