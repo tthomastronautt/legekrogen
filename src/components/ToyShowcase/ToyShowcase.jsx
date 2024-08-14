@@ -1,8 +1,7 @@
 import styles from "./toyShowcase.module.css"
-import SectionLayout from "@components/layouts/SectionLayout/SectionLayout.jsx"
-import ProductCard from "@components/ProductCard/ProductCard.jsx";
-import product1 from "@assets/products/product1.jpg"
-import Title from "@components/Title/Title.jsx"
+import SectionLayout from "@components/layouts/SectionLayout/SectionLayout"
+import ProductCard from "@components/ProductCard/ProductCard"
+import Title from "@components/Title/Title"
 
 const ToyShowcase = () => {
     return(
@@ -10,9 +9,7 @@ const ToyShowcase = () => {
         <Title type="h2" className={styles.title}>Et udpluk af vores</Title>
         <Title type="h2" className={styles.subTitle}>LEGETØJ</Title>
         <div className={styles.cardContainer}>
-            <ProductCard img={product1} imgTitle={"Tandlægesæt i træ"} brand={"Tiny Republic Play"} title={"Tandlægesæt i træ"} price={849} />
-            <ProductCard img={product1} imgTitle={"Tandlægesæt i træ"} brand={"Tiny Republic Play"} title={"Tandlægesæt i træ"} price={849} />
-            <ProductCard img={product1} imgTitle={"Tandlægesæt i træ"} brand={"Tiny Republic Play"} title={"Tandlægesæt i træ"} price={849} />
+            <ProductCard />
         </div>
     </SectionLayout>
     )
