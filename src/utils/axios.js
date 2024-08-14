@@ -8,4 +8,7 @@ export const getReviewsAxios = () =>
     axiosInstance.get("reviews").then((res) => res.data);
 
 export const getQuestionsAxios = () =>
-    axiosInstance.get("questions").then((res) => res.data)
+    axiosInstance.get("questions").then((res) => res.data);
+
+export const createSubscriber = (data) =>
+    axiosInstance.post("subscribe", data).then((res) => res.data);

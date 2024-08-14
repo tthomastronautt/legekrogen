@@ -13,6 +13,7 @@ export default defineConfig({
             "@routes": "/src/routes",
             "@utils": "/src/utils",
             "@variables": "/src/variables",
+            "@hooks": "/src/hooks",
         },
     },
     plugins: [react()],
