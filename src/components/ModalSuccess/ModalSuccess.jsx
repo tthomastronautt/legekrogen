@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import styles from "./ModalSuccess.module.css";
-import Title from "@components/Title/Title";
-import SectionLayout from "@layouts/SectionLayout/SectionLayout";
 import { PropTypes } from "prop-types";
+import SectionLayout from "@layouts/SectionLayout/SectionLayout";
+import Title from "@components/Title/Title";
+import styles from "./ModalSuccess.module.css";
 const ModalSuccess = ({ setIsOpen }) => {
     return (
         <dialog className={styles.modal}>

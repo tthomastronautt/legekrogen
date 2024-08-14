@@ -1,6 +1,6 @@
+import { useMemo } from "react";
 import PropTypes from "prop-types";
 import styles from "./SectionLayout.module.css";
-import { useMemo } from "react";
 
 const SectionLayout = ({ children, classNameSection, classNameContainer }) => {
     const mergedStyles = useMemo(() => {

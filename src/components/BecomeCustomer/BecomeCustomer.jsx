@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 import styles from "./BecomeCustomer.module.css"
 import SectionLayout from '@layouts/SectionLayout/SectionLayout';
 import Title from '@components/Title/Title';
-import { Link } from "react-router-dom";
 const BecomeCustomer = () => {
   return (
       <SectionLayout classNameSection={styles.section}>

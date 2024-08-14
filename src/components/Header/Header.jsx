@@ -1,19 +1,17 @@
-import SectionLayout from "@layouts/SectionLayout/SectionLayout";
+import { Link } from "react-router-dom";
+import { useState, useMemo } from "react";
+import { MdShoppingCart } from "react-icons/md";
 
+import SectionLayout from "@layouts/SectionLayout/SectionLayout";
 import Logo from "@components/Logo/Logo";
 import Delivery from "@components/Delivery/Delivery";
 import Button from "@components/Button/Button";
 import NavBar from "@components/NavBar/NavBar";
 import ShoppingCartList from "@components/ShoppingCartList/ShoppingCartList";
-
-import { Link } from "react-router-dom";
-import { useState, useMemo } from "react";
-
 import { products } from "@variables/products";
 
-import { MdShoppingCart } from "react-icons/md";
-
 import styles from "./Header.module.css";
+
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
     const [isActiveShoppingList, setIsActiveShoppingList] = useState(false);

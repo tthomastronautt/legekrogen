@@ -1,26 +1,19 @@
 import SectionLayout from "@layouts/SectionLayout/SectionLayout";
+import Dropdown from "@components/Dropdown/Dropdown";
+import HandlerSection from "@components/HandlerSection/HandlerSection";
 import { getQuestionsAxios } from "@utils/axios";
-import { useEffect } from "react";
-import { useState } from "react";
-import Dropdown from "./../Dropdown/Dropdown";
+import useFetchHook from "@hooks/useFetchHook.js";
 import styles from "./Questions.module.css";
 const Questions = () => {
-    const [questions, setQuestions] = useState([]);
-
-    const getQuestions = async () => {
-        const questions = await getQuestionsAxios();
-        setQuestions(questions);
-    };
-
-    useEffect(() => {
-        getQuestions();
-    }, []);
+    const HandlserSectionData = useFetchHook(getQuestionsAxios);
 
     return (
         <SectionLayout classNameContainer={styles.container}>
-            {questions.map((question) => (
-                <Dropdown key={question._id} {...question} />
-            ))}
+            <HandlerSection {...HandlserSectionData}>
+                {HandlserSectionData.data.map((question) => (
+                    <Dropdown key={question._id} {...question} />
+                ))}
+            </HandlerSection>
         </SectionLayout>
     );
 };

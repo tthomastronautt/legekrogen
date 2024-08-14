@@ -1,10 +1,9 @@
 import SectionLayout from "@layouts/SectionLayout/SectionLayout";
 import Button from "@components/Button/Button";
-import styles from "./KundeForm.module.css";
-
 import Loader from "@components/Loader/Loader";
-import useCreateSubscriber from "@/hooks/useCreateSubscriber";
 import ModalSuccess from "@components/ModalSuccess/ModalSuccess";
+import useCreateSubscriber from "@/hooks/useCreateSubscriber";
+import styles from "./KundeForm.module.css";
 const KundeForm = () => {
     const {
         formData,

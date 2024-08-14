@@ -1,5 +1,5 @@
-import styles from "./Loader.module.css";
 import { PropTypes } from "prop-types";
+import styles from "./Loader.module.css";
 
 const Loader = ({ className }) => {
     const mergedClassName = `${styles.loader} ${className ?? ""} `

@@ -1,6 +1,6 @@
-import styles from "./NavBarLink.module.css";
 import { NavLink } from "react-router-dom";
 import { PropTypes } from 'prop-types';
+import styles from "./NavBarLink.module.css";
 
 const NavBarLink = ({ path, name, ...rest }) => {
     return (
