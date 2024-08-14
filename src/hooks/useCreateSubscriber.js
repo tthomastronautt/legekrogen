@@ -1,5 +1,6 @@
 import { createSubscriber } from "@utils/axios";
 import { useState } from "react";
+
 const useCreateSubscriber = () => {
     const initialFormData = {
         name: "",
@@ -9,6 +10,7 @@ const useCreateSubscriber = () => {
     const [formData, setFormData] = useState(initialFormData);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
 
     const inputHandler = (event) => {
         const { name, value } = event.target;
@@ -35,9 +37,8 @@ const useCreateSubscriber = () => {
 
         try {
             const data = await createSubscriber(formData);
-            console.log("🚀 ~ submitHandler ~ data:", data);
             if (data?.created) {
-                showPopup();
+                setIsOpen(true);
                 setError("");
                 return;
             }
@@ -51,11 +52,15 @@ const useCreateSubscriber = () => {
         }
     };
 
-    const showPopup = () => {
-        alert("succes");
+    return {
+        formData,
+        isLoading,
+        error,
+        submitHandler,
+        inputHandler,
+        isOpen,
+        setIsOpen,
     };
-
-    return { formData, isLoading, error, submitHandler, inputHandler };
 };
 
 export default useCreateSubscriber;

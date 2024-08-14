@@ -4,9 +4,17 @@ import styles from "./KundeForm.module.css";
 
 import Loader from "@components/Loader/Loader";
 import useCreateSubscriber from "@/hooks/useCreateSubscriber";
+import ModalSuccess from "@components/ModalSuccess/ModalSuccess";
 const KundeForm = () => {
-    const { formData, isLoading, error, submitHandler, inputHandler } =
-        useCreateSubscriber();
+    const {
+        formData,
+        isLoading,
+        error,
+        submitHandler,
+        inputHandler,
+        isOpen,
+        setIsOpen
+    } = useCreateSubscriber();
 
     return (
         <SectionLayout>
@@ -52,6 +60,7 @@ const KundeForm = () => {
 
                 {error && <p className={styles.error}>{error}</p>}
             </form>
+            {isOpen && <ModalSuccess setIsOpen={setIsOpen} />}
         </SectionLayout>
     );
 };
