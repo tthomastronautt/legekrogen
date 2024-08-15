@@ -1,8 +1,8 @@
-import ShoppingCart from "@components/ShoppingCart/ShoppingCart";
-import styles from "./ShoppingCartList.module.css";
 import { useMemo } from "react";
 import { PropTypes } from "prop-types";
+import ShoppingCart from "@components/ShoppingCart/ShoppingCart";
 import { products } from "@variables/products";
+import styles from "./ShoppingCartList.module.css";
 
 const ShoppingCartList = ({ isActiveShoppingList }) => {
     const mergedStylesShoppingList = useMemo(

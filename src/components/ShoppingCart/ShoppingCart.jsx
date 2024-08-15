@@ -1,5 +1,5 @@
-import styles from "./ShoppingCart.module.css";
 import { PropTypes } from 'prop-types';
+import styles from "./ShoppingCart.module.css";
 const ShoppingCart = ({ title, description, image, price }) => {
     return (
         <li className={styles.cart}>

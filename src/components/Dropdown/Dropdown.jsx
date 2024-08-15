@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
 import { IoIosArrowUp } from "react-icons/io";
-import styles from "./Dropdown.module.css";
 import parse from "html-react-parser";
+import styles from "./Dropdown.module.css";
 
 const Dropdown = ({ question, answer }) => {
     return (

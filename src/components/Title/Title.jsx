@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import styles from "./Title.module.css";
 import { useMemo } from "react";
+import styles from "./Title.module.css";
 const Title = ({ type, children, className }) => {
     const mergedStyles = useMemo(
         () => `${styles[type]} ${className ?? ""}`,

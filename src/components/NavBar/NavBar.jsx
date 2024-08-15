@@ -1,8 +1,8 @@
-import NavBarLink from "@components/NavBarLink/NavBarLink";
-import styles from "./NavBar.module.css";
 import { useMemo } from "react";
-import { navlinks } from "@variables/navlinks";
 import { PropTypes } from "prop-types";
+import NavBarLink from "@components/NavBarLink/NavBarLink";
+import { navlinks } from "@variables/navlinks";
+import styles from "./NavBar.module.css";
 const NavBar = ({ isActive,setIsActive }) => {
     const mergedStylesNavBar = useMemo(
         () => `${styles.nav} ${isActive ? styles.activeNavBar : ""}`,

@@ -1,7 +1,25 @@
+import { useMemo } from "react";
+import Welcome from "@components/Welcome/Welcome";
+import KundeForm from "@components/KundeForm/KundeForm";
+import { welcomeData } from "@variables/welcomeData.js";
+import styles from "./Kundeklubben.module.css";
 const Kundeklubben = () => {
-  return (
-    <div>Kundeklubben</div>
-  )
-}
+    const welcomeComponentData = useMemo(() => {
+        return {
+            ...welcomeData.kundeklubben,
+            titleType: "h2",
+            sectionStyles: styles.section,
+            containerStyles: styles.container,
+            subtitleStyles: styles.subtitle,
+        };
+    }, []);
 
-export default Kundeklubben
+    return (
+        <>
+            <Welcome {...welcomeComponentData} />
+            <KundeForm />
+        </>
+    );
+};
+
+export default Kundeklubben;
