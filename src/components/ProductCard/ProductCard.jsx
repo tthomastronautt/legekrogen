@@ -9,7 +9,7 @@ const ProductCard = ({description, title, price, image, discountInPercent}) => {
             <p className={styles.brand}>{title}</p>
             <p className={styles.title}>{description}</p>
             <p className={styles.price}>{price} kr</p>
-            <div>{discountInPercent ? discountInPercent : ""}</div>
+            <div>{discountInPercent ? <div className={styles.discount}><p>{discountInPercent}%</p></div> : ""}</div>
             <button className={styles.button}><FaShoppingBasket /></button>
         </div>
     )
