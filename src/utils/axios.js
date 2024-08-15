@@ -12,3 +12,6 @@ export const getQuestionsAxios = () =>
 
 export const createSubscriber = (data) =>
     axiosInstance.post("subscribe", data).then((res) => res.data);
+
+export const getProductsAxios = () => 
+    axiosInstance.get("products").then((res) => res.data)

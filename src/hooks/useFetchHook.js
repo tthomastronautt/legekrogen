@@ -6,7 +6,7 @@ const useFetchHook = (getAxiosFn) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
 
-    const getReviews = async () => {
+    const getData = async () => {
         setIsLoading(true);
         try {
             const data = await getAxiosFn();
@@ -19,7 +19,7 @@ const useFetchHook = (getAxiosFn) => {
     };
 
     useEffect(() => {
-        getReviews();
+        getData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
