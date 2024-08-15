@@ -8,13 +8,14 @@ import Delivery from "@components/Delivery/Delivery";
 import Button from "@components/Button/Button";
 import NavBar from "@components/NavBar/NavBar";
 import ShoppingCartList from "@components/ShoppingCartList/ShoppingCartList";
-import { products } from "@variables/products";
+import { useLocalStorage } from "@uidotdev/usehooks";
 
 import styles from "./Header.module.css";
 
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
     const [isActiveShoppingList, setIsActiveShoppingList] = useState(false);
+    const [productsId] = useLocalStorage("productsId", []);
 
     const openNavBar = () => setIsActive((prev) => !prev);
 
@@ -25,7 +26,7 @@ const Header = () => {
     const mergedStylesShoppingCartBtn = useMemo(
         () =>
             `${styles.shoppingCartBtn} ${
-                products.length > 0 ? styles.notTomShoppingCart : ""
+                productsId.length > 0 ? styles.notTomShoppingCart : ""
             }`,
         []
     );
