@@ -1,10 +1,20 @@
 import { useMemo } from "react";
 import { PropTypes } from "prop-types";
 import ShoppingCart from "@components/ShoppingCart/ShoppingCart";
-import { products } from "@variables/products";
 import styles from "./ShoppingCartList.module.css";
+import { useLocalStorage } from "@uidotdev/usehooks";
+import useFetchHook from "@hooks/useFetchHook.js";
+import { getProductsAxios } from "@utils/axios";
 
 const ShoppingCartList = ({ isActiveShoppingList }) => {
+    const productsApiData = useFetchHook(getProductsAxios);
+    const [productsId] = useLocalStorage("productsId", []);
+    const localStorageProducts = useMemo(() => {
+        return productsApiData.data.filter((product) =>
+            productsId.includes(product._id)
+        );
+    }, [productsApiData.data, productsId]);
+
     const mergedStylesShoppingList = useMemo(
         () =>
             `${styles.container} ${
@@ -14,30 +24,31 @@ const ShoppingCartList = ({ isActiveShoppingList }) => {
     );
 
     const fullPrice = useMemo(
-        () => products.reduce((acc, item) => acc + item.price, 0),
-        []
+        () => localStorageProducts.reduce((acc, item) => acc + item.price, 0),
+        [localStorageProducts]
     );
 
-    if (products.length === 0)
-        return (
-            <div className={mergedStylesShoppingList}>
-                <div className={styles.containerEmptyContent}>
-                    <span > Der er ingen varer i kurven. </span>
-                </div>
-            </div>
-        );
-
     return (
-        <div className={mergedStylesShoppingList}>
-            <div className={styles.containerContent}>
-                <ul className={styles.list}>
-                    {products.map((item) => (
-                        <ShoppingCart key={item._id} {...item} />
-                    ))}
-                    <li> I alt prise {fullPrice} kr </li>
-                </ul>
-            </div>
-        </div>
+        <seciton className={mergedStylesShoppingList}>
+            <article
+                className={
+                    localStorageProducts.length
+                        ? styles.containerContent
+                        : styles.containerEmptyContent
+                }
+            >
+                {localStorageProducts.length ? (
+                    <ul className={styles.list}>
+                        {localStorageProducts.map((item) => (
+                            <ShoppingCart key={item._id} {...item} />
+                        ))}
+                        <li>I alt prise {fullPrice} kr</li>
+                    </ul>
+                ) : (
+                    <span>Der er ingen varer i kurven.</span>
+                )}
+            </article>
+        </seciton>
     );
 };
 

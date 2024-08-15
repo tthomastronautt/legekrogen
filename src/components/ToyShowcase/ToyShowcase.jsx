@@ -17,7 +17,7 @@ const ToyShowcase = () => {
     <SectionLayout classNameSection={styles.toyShowcase}>
         <Title type="h2" className={styles.title}>Et udpluk af vores</Title>
         <Title type="h2" className={styles.subTitle}>LEGETØJ</Title>
-        <div className={styles.cardContainer}>
+        <article className={styles.cardContainer}>
             <HandlerSection {...productsApiData} >
                 {recommendedProducts.map((product) => {
                     return(
@@ -25,7 +25,7 @@ const ToyShowcase = () => {
                     )
                 })}
             </HandlerSection>
-        </div>
+        </article>
     </SectionLayout>
     )
 }
