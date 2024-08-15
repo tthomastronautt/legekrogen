@@ -15,7 +15,7 @@ import styles from "./Header.module.css";
 const Header = () => {
     const [isActive, setIsActive] = useState(false);
     const [isActiveShoppingList, setIsActiveShoppingList] = useState(false);
-    const [productsId] = useLocalStorage("productsId", []);
+    const [productsData] = useLocalStorage("productsData", {});
 
     const openNavBar = () => setIsActive((prev) => !prev);
 
@@ -26,10 +26,19 @@ const Header = () => {
     const mergedStylesShoppingCartBtn = useMemo(
         () =>
             `${styles.shoppingCartBtn} ${
-                productsId.length > 0 ? styles.notTomShoppingCart : ""
+                productsData.products && productsData.products.length > 0
+                    ? styles.notTomShoppingCart
+                    : ""
             }`,
-        []
+        [productsData.products]
     );
+
+    const shoppingListProps = useMemo(() => {
+        return {
+            isActiveShoppingList,
+            setIsActiveShoppingList,
+        };
+    }, [isActiveShoppingList]);
 
     return (
         <header>
@@ -55,7 +64,7 @@ const Header = () => {
                     <span></span>
                 </Button>
                 <NavBar isActive={isActive} setIsActive={setIsActive} />
-                <ShoppingCartList isActiveShoppingList={isActiveShoppingList} />
+                <ShoppingCartList {...shoppingListProps} />
             </SectionLayout>
         </header>
     );

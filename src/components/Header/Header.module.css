@@ -13,8 +13,7 @@
 
 .linkLogo {
     position: relative;
-    z-index: 20;
-    justify-self: start;
+    z-index: 15;
 }
 
 .shoppingCartBtn {

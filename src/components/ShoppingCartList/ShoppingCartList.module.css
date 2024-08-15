@@ -1,6 +1,6 @@
 .container {
     position: fixed;
-    z-index: 10;
+    z-index: 15;
     inset: 0;
     background: var(--blackOpacity);
     top: 0;
@@ -43,4 +43,25 @@
     & > li:last-child {
         align-self: self-end;
     }
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 20;
+    background: transparent;
+     & svg {
+         color: var(--white);
+         width: 25px;
+         aspect-ratio: 1/1;
+         transition: all 0.5s ease 0s;
+         border-radius: 50%;
+         @media (min-width: 1281px) {
+             &:hover {
+                 color: var(--white);
+                 box-shadow: 0px 0px 30px 0px var(--lightviolet), 0 4px 6px -4px var(--lightviolet);
+             }
+         }
+     }
 }

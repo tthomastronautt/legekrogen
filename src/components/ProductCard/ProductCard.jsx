@@ -12,11 +12,28 @@ const ProductCard = ({
     discountInPercent,
     _id,
 }) => {
-    const [productsId, saveProductsId] = useLocalStorage("productsId", []);
+    const [productsData, saveProductsData] = useLocalStorage(
+        "productsData",
+        {}
+    );
 
     const addToBasket = (id) => {
-        if (productsId.includes(id)) return;
-        saveProductsId([...productsId, id]);
+        if (
+            productsData.products &&
+            productsData.products.map((product) => product.id).includes(id)
+        )
+            return;
+
+        const newProduct = {
+            products: productsData.products
+                ? [...productsData.products, { id, amount: 1 }]
+                : [{ id, amount: 1 }],
+            email: "messileonl@gmail.com",
+        };
+        saveProductsData({
+            ...productsData,
+            ...newProduct,
+        });
     };
 
     return (
@@ -25,7 +42,15 @@ const ProductCard = ({
             <p className={styles.brand}>{title}</p>
             <p className={styles.title}>{description}</p>
             <p className={styles.price}>{price} kr</p>
-            <div>{discountInPercent ? <div className={styles.discount}><p>{discountInPercent}%</p></div> : ""}</div>
+            <div>
+                {discountInPercent ? (
+                    <div className={styles.discount}>
+                        <p>{discountInPercent}%</p>
+                    </div>
+                ) : (
+                    ""
+                )}
+            </div>
             <Button
                 type="button"
                 onClick={() => addToBasket(_id)}
