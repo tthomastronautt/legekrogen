@@ -12,11 +12,17 @@ const Forside = () => {
             titleType: "h1",
         };
     }, []);
+    const toyShowcaseComponentData = useMemo(() => {
+        return {
+            title: "Et udpluk af vores",
+            isRecommended: true,
+        }
+    })
 
     return (
         <>
             <Welcome {...welcomeComponentData} />
-            <ToyShowcase />
+            <ToyShowcase {...toyShowcaseComponentData}/>
             <PronouncesSection />
             <BecomeCustomer />
         </>

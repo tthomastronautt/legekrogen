@@ -6,16 +6,19 @@ import { useMemo } from "react"
 import { getProductsAxios } from "@utils/axios"
 import useFetchHook from "@hooks/useFetchHook"
 import HandlerSection from "@components/HandlerSection/HandlerSection"
+import PropTypes from "prop-types";
 
-const ToyShowcase = () => {
+const ToyShowcase = ({title, isRecommended}) => {
     const productsApiData = useFetchHook(getProductsAxios)
     const recommendedProducts = useMemo(() => {
-        return productsApiData.data.filter((product) => product.recommended)
-    }, [productsApiData.data])
+        return productsApiData.data.filter((product) => {
+            return isRecommended ? product.recommended : product
+        })
+    }, [productsApiData.data, isRecommended])
     
     return(
     <SectionLayout classNameSection={styles.toyShowcase}>
-        <Title type="h2" className={styles.title}>Et udpluk af vores</Title>
+        <Title type="h2" className={styles.title}>{title}</Title>
         <p className={styles.subTitle}>LEGETØJ</p>
         <article className={styles.cardContainer}>
             <HandlerSection {...productsApiData} >
@@ -31,3 +34,8 @@ const ToyShowcase = () => {
 }
 
 export default ToyShowcase
+
+ToyShowcase.propTypes = {
+    isRecommended: PropTypes.bool,
+    title: PropTypes.string,
+}

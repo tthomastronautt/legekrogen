@@ -53,4 +53,12 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
+    transition: all 1s ease 0s;
+}
+@media screen and (min-width: 1366px) {
+    .button:hover{
+        border: 1px solid var(--white);
+        background-color: var(--darkpurple);
+        color: var(--white);
+    }
 }

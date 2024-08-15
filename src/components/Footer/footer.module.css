@@ -12,12 +12,25 @@
 .info{
     font-size: 1rem;
     padding: 5px 0px;
+    transition: all .3s ease 0s;
 }
 .socialContainer{
     display: flex;
     font-size: 3rem;
     margin: 0px 0px 40px 0px;
+    
+    transition: all .3s ease 0s;
 }
 .social{
     margin: 0px 5px;
+}
+@media screen and (min-width: 1366px) {
+    .info:hover{
+        box-shadow: 0px 0px 0px 3px var(--ligthblue);
+        background-color: var(--ligthblue);
+        color: var(--darkblue);
+    }
+    .social:hover{
+        box-shadow: 0px 0px 0px 3px var(--ligthblue); 
+    }
 }
