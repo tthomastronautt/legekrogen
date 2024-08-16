@@ -3,6 +3,8 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { PropTypes } from "prop-types";
 import Button from "@components/Button/Button";
 import { useLocalStorage } from "@uidotdev/usehooks";
+import { useState } from "react";
+import { SiMinutemailer } from "react-icons/si";
 
 const ProductCard = ({
     description,
@@ -16,6 +18,7 @@ const ProductCard = ({
         "productsData",
         {}
     );
+    const [isSending, setIsSending] = useState(false);
 
     const addToBasket = (id) => {
         if (
@@ -23,7 +26,7 @@ const ProductCard = ({
             productsData.products.map((product) => product.id).includes(id)
         )
             return;
-
+        setIsSending(true);
         const newProduct = {
             products: productsData.products
                 ? [...productsData.products, { id, amount: 1 }]
@@ -34,6 +37,9 @@ const ProductCard = ({
             ...productsData,
             ...newProduct,
         });
+        setTimeout(() => {
+            setIsSending(false);
+        }, 1000);
     };
 
     return (
@@ -57,6 +63,11 @@ const ProductCard = ({
                 className={styles.button}
             >
                 <FaShoppingBasket />
+                {isSending && (
+                    <div className={styles.sendToBasket}>
+                        <SiMinutemailer />
+                    </div>
+                )}
             </Button>
         </div>
     );

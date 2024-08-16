@@ -14,17 +14,34 @@
 .linkLogo {
     position: relative;
     z-index: 15;
+    justify-self: start;
 }
 
 .shoppingCartBtn {
     position: relative;
-    z-index: 20;
+    z-index: 10;
     margin-right: 0.5rem;
 
     & svg {
         width: 20px;
         height: 20px;
         color: var(--grey);
+    }
+}
+
+.notTomShoppingCart {
+    &::after {
+        content: attr(data-value);
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        color: var(--white);
+        background: var(--darkviolet);
+        border-radius: 50%;
+        font-size: 0.75rem;
+        width: 20px;
+        height: 20px;
+        
     }
 }
 

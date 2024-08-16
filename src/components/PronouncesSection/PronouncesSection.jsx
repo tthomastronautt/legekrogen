@@ -1,13 +1,13 @@
-import SectionLayout from "@components/layouts/SectionLayout/SectionLayout";
+import SectionLayout from "@layouts/SectionLayout/SectionLayout";
 import Title from "@components/Title/Title";
 import styles from "./PronouncesSection.module.css";
 import Pronounces from "@components/Pronounces/Pronounces";
-import HandlerSection from "@components/HandlerSection/HandlerSection";
+import HandlerSection from "@layouts/HandlerSection/HandlerSection";
 import { getReviewsAxios } from "@utils/axios";
 import useFetchHook from "@hooks/useFetchHook";
 const PronouncesSection = () => {
     const HandlserSectionData = useFetchHook(getReviewsAxios);
-    
+
     return (
         <SectionLayout classNameSection={styles.section}>
             <HandlerSection {...HandlserSectionData}>

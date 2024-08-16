@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 300px;
     background-color: var(--darkviolet);
     border-radius: 16px;
@@ -6,23 +6,26 @@
     margin: 20px;
     position: relative;
 }
-.productImg{
+.productImg {
     border-radius: 16px 16px 0px 0px;
 }
-.brand, .title, .price{
+.brand,
+.title,
+.price {
     margin-inline: 22px;
 }
-.brand{
+.brand {
     margin-block: 16px 0px;
 }
-.title, .price{
+.title,
+.price {
     font-weight: bold;
 }
-.price{
+.price {
     font-size: 26px;
     padding-block: 16px;
 }
-.discount{
+.discount {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,13 +43,13 @@
     right: 0px;
     z-index: 10;
 }
-.button{
+.button {
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--darkblue);
     background-color: var(--ligthblue);
-    margin:16px 22px 16px auto;
+    margin: 16px 22px 16px auto;
     width: 50px;
     height: 30px;
     border-radius: 50px;
@@ -54,11 +57,31 @@
     bottom: 0px;
     right: 0px;
     transition: all 1s ease 0s;
+    @media (min-width: 1281px) {
+        &:hover {
+            outline: 1px solid var(--white);
+            background-color: var(--darkpurple);
+            color: var(--white);
+        }
+    }
 }
-@media screen and (min-width: 1366px) {
-    .button:hover{
-        border: 1px solid var(--white);
-        background-color: var(--darkpurple);
-        color: var(--white);
+
+.sendToBasket {
+    position: absolute;
+    top: -30px;
+    z-index: 50;
+    animation: sendToCart 1s 0.5s forwards;
+    svg {
+        fill: var(--black);
+    }
+}
+
+@keyframes sendToCart {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, -80dvh);
     }
 }

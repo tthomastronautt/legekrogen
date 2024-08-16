@@ -1,11 +1,17 @@
 .container {
     position: fixed;
     z-index: 15;
-    inset: 0;
-    background: var(--blackOpacity);
     top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--blackOpacity);
     translate: 100% 0;
     transition: translate 0.5s ease 0s;
+
+    @media (min-width: 768px) {
+        left: calc(100dvw - 600px);
+    }
 }
 
 .activeShoppingList {
@@ -15,6 +21,7 @@
 .containerContent {
     position: absolute;
     top: calc(28px + 56px);
+    left: 0;
     right: 0;
     z-index: 10;
     background: var(--white);
@@ -51,17 +58,18 @@
     left: 1rem;
     z-index: 20;
     background: transparent;
-     & svg {
-         color: var(--white);
-         width: 25px;
-         aspect-ratio: 1/1;
-         transition: all 0.5s ease 0s;
-         border-radius: 50%;
-         @media (min-width: 1281px) {
-             &:hover {
-                 color: var(--white);
-                 box-shadow: 0px 0px 30px 0px var(--lightviolet), 0 4px 6px -4px var(--lightviolet);
-             }
-         }
-     }
+    & svg {
+        color: var(--white);
+        width: 25px;
+        aspect-ratio: 1/1;
+        transition: all 0.5s ease 0s;
+        border-radius: 50%;
+        @media (min-width: 1281px) {
+            &:hover {
+                color: var(--white);
+                box-shadow: 0px 0px 30px 0px var(--lightviolet),
+                    0 4px 6px -4px var(--lightviolet);
+            }
+        }
+    }
 }

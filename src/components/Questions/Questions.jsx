@@ -1,6 +1,6 @@
 import SectionLayout from "@layouts/SectionLayout/SectionLayout";
 import Dropdown from "@components/Dropdown/Dropdown";
-import HandlerSection from "@components/HandlerSection/HandlerSection";
+import HandlerSection from "@layouts/HandlerSection/HandlerSection";
 import { getQuestionsAxios } from "@utils/axios";
 import useFetchHook from "@hooks/useFetchHook.js";
 import styles from "./Questions.module.css";

@@ -8,7 +8,7 @@ export default defineConfig({
             "@": "/src",
             "@assets": "/src/assets",
             "@components": "/src/components",
-            "@layouts": "/src/components/layouts",
+            "@layouts": "/src/layouts",
             "@pages": "/src/pages",
             "@routes": "/src/routes",
             "@utils": "/src/utils",
