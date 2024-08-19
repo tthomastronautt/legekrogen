@@ -1,0 +1,13 @@
+.input {
+    outline: 1px solid var(--grey);
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+    border-radius: 1.25rem;
+    &::placeholder {
+        color: var(--grey);
+        font-size: 0.75rem;
+    }
+    &:focus {
+        outline: 2px solid var(--lightviolet);
+    }
+}

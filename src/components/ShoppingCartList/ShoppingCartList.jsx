@@ -6,14 +6,18 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 import useFetchHook from "@hooks/useFetchHook.js";
 import { getProductsAxios } from "@utils/axios";
 import { IoMdCloseCircle } from "react-icons/io";
-import Button from '@components/Button/Button';
+import Button from "@components/Button/Button";
+import { Link } from "react-router-dom";
 
-const ShoppingCartList = ({ isActiveShoppingList, setIsActiveShoppingList }) => {
+const ShoppingCartList = ({
+    isActiveShoppingList,
+    setIsActiveShoppingList,
+}) => {
     const productsApiData = useFetchHook(getProductsAxios);
     const [productsData] = useLocalStorage("productsData", {});
 
     const localStorageProducts = useMemo(() => {
-        const productAmounts = productsData.products.reduce((acc, product) => {
+        const productAmounts = productsData.products?.length && productsData.products.reduce((acc, product) => {
             acc[product.id] = product.amount;
             return acc;
         }, {});
@@ -39,11 +43,13 @@ const ShoppingCartList = ({ isActiveShoppingList, setIsActiveShoppingList }) => 
     );
 
     const fullPrice = useMemo(
-        () => localStorageProducts.reduce((acc, item) => acc + item.price * item.amount	, 0),
+        () =>
+            localStorageProducts.reduce(
+                (acc, item) => acc + item.price * item.amount,
+                0
+            ),
         [localStorageProducts]
     );
-
-   
 
     return (
         <section className={mergedStylesShoppingList}>
@@ -60,13 +66,22 @@ const ShoppingCartList = ({ isActiveShoppingList, setIsActiveShoppingList }) => 
                             <ShoppingCart key={item._id} {...item} />
                         ))}
                         <li>I alt prise {fullPrice} kr</li>
+                        <li>
+                            <Link onClick={() => setIsActiveShoppingList(false)} className={styles.kasse} to="/kasse">Gå til kassen</Link>
+                        </li>
                     </ul>
                 ) : (
                     <span>Der er ingen varer i kurven.</span>
                 )}
             </article>
-            
-        <Button onClick={ () => setIsActiveShoppingList(false)} className={styles.closeButton} type="button"><IoMdCloseCircle /></Button>
+
+            <Button
+                onClick={() => setIsActiveShoppingList(false)}
+                className={styles.closeButton}
+                type="button"
+            >
+                <IoMdCloseCircle />
+            </Button>
         </section>
     );
 };

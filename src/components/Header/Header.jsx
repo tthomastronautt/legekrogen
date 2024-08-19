@@ -55,7 +55,7 @@ const Header = () => {
                     <Logo width={115} />
                 </Link>
                 <Button
-                    data-value={productsData.products.length}
+                    data-value={productsData.products?.length}
                     onClick={() => setIsActiveShoppingList((prev) => !prev)}
                     className={mergedStylesShoppingCartBtn}
                 >

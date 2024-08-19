@@ -14,6 +14,7 @@ export default defineConfig({
             "@utils": "/src/utils",
             "@variables": "/src/variables",
             "@hooks": "/src/hooks",
+            "@context": "/src/context",
         },
     },
     plugins: [react()],

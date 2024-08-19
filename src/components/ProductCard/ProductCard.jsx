@@ -31,7 +31,6 @@ const ProductCard = ({
             products: productsData.products
                 ? [...productsData.products, { id, amount: 1 }]
                 : [{ id, amount: 1 }],
-            email: "messileonl@gmail.com",
         };
         saveProductsData({
             ...productsData,

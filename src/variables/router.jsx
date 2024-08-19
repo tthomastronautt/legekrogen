@@ -9,6 +9,7 @@ const FAQ = lazy(() => import("@pages/FAQ/FAQ"));
 const Kundeklubben = lazy(() => import("@pages/Kundeklubben/Kundeklubben"));
 const NotFounded = lazy(() => import("@pages/NotFounded/NotFounded"));
 const ErrorBoundary = lazy(() => import("@pages/ErrorBoundary"));
+const Kasse = lazy(() => import("@pages/Kasse/Kasse"));
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
             {
                 path: "/kundeklubben",
                 element: <Kundeklubben />,
+                errorElement: <ErrorBoundary />,
+            },
+            {
+                path: "/kasse",
+                element: <Kasse />,
                 errorElement: <ErrorBoundary />,
             },
 
