@@ -1,5 +1,6 @@
 import { FaFacebook, FaInstagram, FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
+import { RiInstagramFill } from "react-icons/ri";
 import styles from "./footer.module.css";
 import Title from "@components/Title/Title"
 
@@ -12,7 +13,7 @@ const Footer = () => {
             <Title type="h2" className={styles.title}>Følg os</Title>
             <article className={styles.socialContainer}>
                 <a className={styles.social} href="https://www.facebook.com/" target="_blank"><p><FaFacebook /></p></a>
-                <a className={styles.social} href="https://www.instagram.com/" target="_blank"><p><FaInstagram /></p></a>
+                <a className={styles.social} href="https://www.instagram.com/" target="_blank"><p><RiInstagramFill /></p></a>
             </article>
         </footer>
     )
