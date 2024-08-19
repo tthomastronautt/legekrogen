@@ -26,11 +26,11 @@ const Header = () => {
     const mergedStylesShoppingCartBtn = useMemo(
         () =>
             `${styles.shoppingCartBtn} ${
-                productsData.products && productsData.products.length > 0
+                productsData?.products && productsData?.products.length > 0
                     ? styles.notTomShoppingCart
                     : ""
             }`,
-        [productsData.products]
+        [productsData?.products]
     );
 
     const shoppingListProps = useMemo(() => {
@@ -55,7 +55,7 @@ const Header = () => {
                     <Logo width={115} />
                 </Link>
                 <Button
-                    data-value={productsData.products?.length}
+                    data-value={productsData?.products?.length}
                     onClick={() => setIsActiveShoppingList((prev) => !prev)}
                     className={mergedStylesShoppingCartBtn}
                 >

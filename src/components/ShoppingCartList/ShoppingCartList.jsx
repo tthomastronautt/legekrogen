@@ -17,7 +17,7 @@ const ShoppingCartList = ({
     const [productsData] = useLocalStorage("productsData", {});
 
     const localStorageProducts = useMemo(() => {
-        const productAmounts = productsData.products?.length && productsData.products.reduce((acc, product) => {
+        const productAmounts = productsData?.products?.reduce((acc, product) => {
             acc[product.id] = product.amount;
             return acc;
         }, {});
