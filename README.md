@@ -1,4 +1,4 @@
-github pages: https://tthomastronautt.github.io/legekrogen/
+github pages: [legekrogen](https://tthomastronautt.github.io/legekrogen/)
 
 # React + Vite
 
