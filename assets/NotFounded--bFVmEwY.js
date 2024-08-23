@@ -1,0 +1,1 @@
+import{j as n,S as t}from"./index-DT4f5Qu7.js";const e="/legekrogen/assets/404-BYmLfOG9.png",o="_container_kqvse_1",s={container:o},r=()=>n.jsx(t,{classNameContainer:s.container,children:n.jsx("img",{className:s.img,src:e,alt:""})});export{r as default};
