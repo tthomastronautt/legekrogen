@@ -177,62 +177,71 @@ const KasseOrdreSection = () => {
                         <p className={styles.description}>
                             Din ordre er nu sendt til din e-mail.
                         </p>
-                        <b className={styles.orderTitle}>Tildigere ordre</b>
-                        {allOrders &&
-                            allOrders.length > 0 &&
-                            allOrders.map((orders, i) => {
-                                return (
-                                    <div
-                                        className={styles.orderContainer}
-                                        key={i}
-                                    >
-                                        <b className={styles.orderTitle}>
-                                            Ordre {i + 1}
-                                        </b>
-                                        <div className={styles.row}>
-                                            <b>Image</b>
-                                            <b>Title</b>
-                                            <b>Description</b>
-                                            <b className={styles.amount}>
-                                                Antal
+
+                        {allOrders.length > 0 && (
+                            <>
+                                <b className={styles.orderTitle}>
+                                    Tildigere ordre
+                                </b>
+                                {allOrders.map((orders, i) => {
+                                    return (
+                                        <div
+                                            className={styles.orderContainer}
+                                            key={i}
+                                        >
+                                            <b className={styles.orderTitle}>
+                                                Ordre {i + 1}
                                             </b>
-                                            <b className={styles.price}>
-                                                Price
-                                            </b>
+                                            <div className={styles.row}>
+                                                <b>Image</b>
+                                                <b>Title</b>
+                                                <b>Description</b>
+                                                <b className={styles.amount}>
+                                                    Antal
+                                                </b>
+                                                <b className={styles.price}>
+                                                    Price
+                                                </b>
+                                            </div>
+                                            {orders.map((order, index) => {
+                                                return (
+                                                    <div
+                                                        className={styles.row}
+                                                        key={index}
+                                                    >
+                                                        <img
+                                                            src={order.image}
+                                                            className={
+                                                                styles.img
+                                                            }
+                                                            alt=""
+                                                        />
+                                                        <b>{order.title}</b>
+                                                        <span>
+                                                            {order.description}
+                                                        </span>
+                                                        <span
+                                                            className={
+                                                                styles.amount
+                                                            }
+                                                        >
+                                                            {order.amount}
+                                                        </span>
+                                                        <span
+                                                            className={
+                                                                styles.price
+                                                            }
+                                                        >
+                                                            {order.price}
+                                                        </span>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
-                                        {orders.map((order, index) => {
-                                            return (
-                                                <div
-                                                    className={styles.row}
-                                                    key={index}
-                                                >
-                                                    <img
-                                                        src={order.image}
-                                                        className={styles.img}
-                                                        alt=""
-                                                    />
-                                                    <b>{order.title}</b>
-                                                    <span>
-                                                        {order.description}
-                                                    </span>
-                                                    <span
-                                                        className={
-                                                            styles.amount
-                                                        }
-                                                    >
-                                                        {order.amount}
-                                                    </span>
-                                                    <span
-                                                        className={styles.price}
-                                                    >
-                                                        {order.price}
-                                                    </span>
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
-                                );
-                            })}
+                                    );
+                                })}
+                            </>
+                        )}
 
                         <Button
                             onClick={() => dialogRef.current.close()}
