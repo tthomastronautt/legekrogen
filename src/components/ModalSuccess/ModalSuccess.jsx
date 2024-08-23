@@ -15,7 +15,7 @@ const ModalSuccess = ({ setIsOpen }) => {
                     Tag et kig i din indbakke. Vi har givet dig fri fragt på din
                     første ordre.
                 </p>
-                    <Link onClick={() => setIsOpen(false)} to={"/"} className={styles.link}>
+                    <Link onClick={() => setIsOpen(false)} to={"/legekrogen"} className={styles.link}>
                         TIL FORSIDEN
                     </Link>
             </SectionLayout>

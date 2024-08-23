@@ -2,16 +2,16 @@ export const navlinks = [
     {
         id: 1,
         name: "Produkter",
-        path: "/produkter",
+        path: "legekrogen/produkter",
     },
     {
         id: 2,
         name: "FAQ",
-        path: "/faq",
+        path: "legekrogen/faq",
     },
     {
         id: 3,
         name: "Kundeklubben",
-        path: "/kundeklubben",
+        path: "legekrogen/kundeklubben",
     },
 ];

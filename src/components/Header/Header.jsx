@@ -50,7 +50,7 @@ const Header = () => {
                 <Link
                     onClick={() => setIsActive(false)}
                     className={styles.linkLogo}
-                    to="/"
+                    to="/legekrogen"
                 >
                     <Logo width={115} />
                 </Link>

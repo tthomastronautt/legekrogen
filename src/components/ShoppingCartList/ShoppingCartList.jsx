@@ -86,7 +86,7 @@ const ShoppingCartList = ({
                                 <Link
                                     onClick={closeShoppingBar}
                                     className={styles.kasse}
-                                    to="/kasse"
+                                    to="legekrogen/kasse"
                                 >
                                     Gå til kassen
                                 </Link>

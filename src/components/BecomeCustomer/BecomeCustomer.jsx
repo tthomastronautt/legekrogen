@@ -7,7 +7,7 @@ const BecomeCustomer = () => {
       <SectionLayout classNameSection={styles.section}>
           <p className={styles.info}>Kunne du også tænke dig at blive medlem af vores</p>
           <Title type="h1" className={styles.title}>Kundeservice</Title>
-          <Link to={"/kundeklubben"} className={styles.link}>Bliv medlem nu!</Link>
+          <Link to={"../legekrogen/kundeklubben"} className={styles.link}>Bliv medlem nu!</Link>
     </SectionLayout>
   )
 }

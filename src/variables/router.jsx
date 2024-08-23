@@ -21,27 +21,27 @@ const router = createBrowserRouter([
         errorElement: <ErrorBoundary />,
         children: [
             {
-                path: "/",
+                path: "/legekrogen",
                 element: <Forside />,
                 errorElement: <ErrorBoundary />,
             },
             {
-                path: "/produkter",
+                path: "legekrogen/produkter",
                 element: <Produkter />,
                 errorElement: <ErrorBoundary />,
             },
             {
-                path: "/faq",
+                path: "legekrogen/faq",
                 element: <FAQ />,
                 errorElement: <ErrorBoundary />,
             },
             {
-                path: "/kundeklubben",
+                path: "legekrogen/kundeklubben",
                 element: <Kundeklubben />,
                 errorElement: <ErrorBoundary />,
             },
             {
-                path: "/kasse",
+                path: "legekrogen/kasse",
                 element: <Kasse />,
                 errorElement: <ErrorBoundary />,
             },
