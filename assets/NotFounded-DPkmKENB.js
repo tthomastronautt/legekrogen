@@ -1,0 +1,1 @@
+import{j as n,S as t}from"./index-bpO7Eq8b.js";const o="/assets/404-BYmLfOG9.png",e="_container_kqvse_1",s={container:e},c=()=>n.jsx(t,{classNameContainer:s.container,children:n.jsx("img",{className:s.img,src:o,alt:""})});export{c as default};
