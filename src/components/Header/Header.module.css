@@ -20,7 +20,7 @@
 .shoppingCartBtn {
     position: relative;
     z-index: 10;
-    margin-right: 0.5rem;
+    margin-right: 1.5rem;
 
     & svg {
         width: 20px;

@@ -17,7 +17,7 @@ const Forside = () => {
             title: "Et udpluk af vores",
             isRecommended: true,
         }
-    })
+    }, [])
 
     return (
         <>
