@@ -1,17 +1,19 @@
 .container {
-    position: fixed;
-    z-index: 15;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    position: absolute;
+    inset: 0 0 0 50%;
     background: var(--blackOpacity);
-    translate: 100% 0;
-    transition: translate 0.5s ease 0s;
 
     @media (min-width: 768px) {
         left: calc(100dvw - 600px);
     }
+}
+
+.wrapper {
+    position: fixed;
+    z-index: 15;
+    inset: 0;
+    translate: 100% 0;
+    transition: translate 0.5s ease 0s;
 }
 
 .activeShoppingList {

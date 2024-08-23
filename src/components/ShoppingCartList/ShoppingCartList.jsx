@@ -17,10 +17,13 @@ const ShoppingCartList = ({
     const [productsData] = useLocalStorage("productsData", {});
 
     const localStorageProducts = useMemo(() => {
-        const productAmounts = productsData?.products?.reduce((acc, product) => {
-            acc[product.id] = product.amount;
-            return acc;
-        }, {});
+        const productAmounts = productsData?.products?.reduce(
+            (acc, product) => {
+                acc[product.id] = product.amount;
+                return acc;
+            },
+            {}
+        );
 
         return productsApiData.data
             .filter(
@@ -36,7 +39,7 @@ const ShoppingCartList = ({
 
     const mergedStylesShoppingList = useMemo(
         () =>
-            `${styles.container} ${
+            `${styles.wrapper} ${
                 isActiveShoppingList ? styles.activeShoppingList : ""
             }`,
         [isActiveShoppingList]
@@ -51,37 +54,52 @@ const ShoppingCartList = ({
         [localStorageProducts]
     );
 
-    return (
-        <section className={mergedStylesShoppingList}>
-            <article
-                className={
-                    localStorageProducts.length
-                        ? styles.containerContent
-                        : styles.containerEmptyContent
-                }
-            >
-                {localStorageProducts.length ? (
-                    <ul className={styles.list}>
-                        {localStorageProducts.map((item) => (
-                            <ShoppingCart key={item._id} {...item} />
-                        ))}
-                        <li>I alt prise {fullPrice} kr</li>
-                        <li>
-                            <Link onClick={() => setIsActiveShoppingList(false)} className={styles.kasse} to="/kasse">Gå til kassen</Link>
-                        </li>
-                    </ul>
-                ) : (
-                    <span>Der er ingen varer i kurven.</span>
-                )}
-            </article>
+    const containerClick = (e) => {
+        e.stopPropagation();
+    };
 
-            <Button
-                onClick={() => setIsActiveShoppingList(false)}
-                className={styles.closeButton}
-                type="button"
-            >
-                <IoMdCloseCircle />
-            </Button>
+    const closeShoppingBar = () => {
+        setIsActiveShoppingList(false);
+    };
+
+    return (
+        <section
+            onClick={closeShoppingBar}
+            className={mergedStylesShoppingList}
+        >
+            <div className={styles.container}>
+                <article
+                    onClick={containerClick}
+                    className={
+                        localStorageProducts.length
+                            ? styles.containerContent
+                            : styles.containerEmptyContent
+                    }
+                >
+                    {localStorageProducts.length ? (
+                        <ul className={styles.list}>
+                            {localStorageProducts.map((item) => (
+                                <ShoppingCart key={item._id} {...item} />
+                            ))}
+                            <li>I alt prise {fullPrice} kr</li>
+                            <li>
+                                <Link
+                                    onClick={closeShoppingBar}
+                                    className={styles.kasse}
+                                    to="/kasse"
+                                >
+                                    Gå til kassen
+                                </Link>
+                            </li>
+                        </ul>
+                    ) : (
+                        <span>Der er ingen varer i kurven.</span>
+                    )}
+                </article>
+                <Button className={styles.closeButton} type="button">
+                    <IoMdCloseCircle />
+                </Button>
+            </div>
         </section>
     );
 };
